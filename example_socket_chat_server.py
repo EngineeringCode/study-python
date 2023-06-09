@@ -4,6 +4,8 @@ from queue import Queue
 
 # https://docs.python.org/3.10/library/socket.html
 # https://github.com/python/cpython/blob/3.10/Lib/socket.py
+# https://docs.python.org/3.10/library/threading.html
+# https://docs.python.org/3.10/library/queue.html
 
 HOST = ''
 PORT = 25555

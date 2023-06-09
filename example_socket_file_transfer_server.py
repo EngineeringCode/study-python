@@ -5,6 +5,9 @@ import datetime
 
 # https://docs.python.org/3.10/library/socket.html
 # https://github.com/python/cpython/blob/3.10/Lib/socket.py
+# https://docs.python.org/3.10/library/os.html
+# https://docs.python.org/3.10/library/sys.html
+# https://docs.python.org/3.10/library/datetime.html
 
 HOST = ''
 PORT = 25555
