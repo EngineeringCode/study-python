@@ -32,7 +32,7 @@ def receive(p_connection):
     while True:
         message = connection.recv(1024).decode('utf-8')
         #print(f'수신한 데이터: {message}')
-        message_queue.put([message, connection])
+        message_queue.put([message, p_connection])
 
 if __name__ == '__main__':
     server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
