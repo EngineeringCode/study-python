@@ -30,24 +30,24 @@ def send():
                 for conn in connections:
                     if conn.fileno() == int(message[1]):
                         conn.sendall(data.encode('utf-8'))
+                        break
             else:
                 for conn in connections:
                     conn.sendall(data.encode('utf-8'))
-
         except:
             pass
 
 def receive(p_connection):
     print(f'클라이언트{p_connection} 메시지 수신 스레드 시작')
     while True:
-        message = connection.recv(1024).decode('utf-8')
+        message = p_connection.recv(1024).decode('utf-8')
+        print(f'수신한 데이터: {message}')
         is_whisper = message[0:1]
         target_fd = message[1:6]
         chat = message[6:]
-        print(f'수신한 데이터: {message}')
-        print(f'is_whisper: {is_whisper}')
-        print(f'target_fd: {target_fd}')
-        print(f'chat: {chat}')
+        #print(f'is_whisper: {is_whisper}')
+        #print(f'target_fd: {target_fd}')
+        #print(f'chat: {chat}')
         message_queue.put([is_whisper, target_fd, chat, p_connection])
 
 if __name__ == '__main__':

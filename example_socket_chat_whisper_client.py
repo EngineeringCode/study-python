@@ -10,8 +10,12 @@ PORT = 25555
 
 def send():
     while True:
-        input_data = input("메시지 입력: ").encode('utf-8')
-        client.sendall(input_data)
+        input_data = input("메시지 입력: ")
+        if input_data[0:1] == '귓':
+            print(f'귓속말 전송 시작! 수신대상:{input_data[1:6]}')
+            client.sendall(input_data.encode('utf-8'))
+        else:
+            client.sendall(f'X00000{input_data}'.encode('utf-8'))
 
 def receive():
     while True:
