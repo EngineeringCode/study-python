@@ -30,7 +30,7 @@ def send():
 def receive(p_connection):
     print(f'클라이언트{p_connection} 메시지 수신 스레드 시작')
     while True:
-        message = connection.recv(1024).decode('utf-8')
+        message = p_connection.recv(1024).decode('utf-8')
         #print(f'수신한 데이터: {message}')
         message_queue.put([message, p_connection])
 
