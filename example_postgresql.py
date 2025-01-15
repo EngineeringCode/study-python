@@ -20,7 +20,7 @@ with psycopg.connect("host=10.10.10.10 port=5432 dbname=postgres user=postgres p
 
             connection.commit()
 
-            print(f"changed rows: {result}")
+            print(f"{result}")
 
             cursor.execute("SELECT * FROM example")
             rows = cursor.fetchall()
