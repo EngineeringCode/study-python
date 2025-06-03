@@ -16,7 +16,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
 
     input_id = input("아이디 입력: ")
     input_pw = input("패스워드 입력: ")
-    input_data = input_id[0:20].rjust(20, ' ') + input_pw[0:20].rjust(20, ' ')
+    input_data = input_id[0:20].rjust(20, ' ') + input_pw[0:20].rjust(20, ' ') + ''.rjust(1018, ' ')
     print(input_data)
     client.sendall(input_data.encode('utf-8'))
     received_data = client.recv(1024).decode('utf-8')
